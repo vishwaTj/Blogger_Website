@@ -15,18 +15,9 @@ const Navabar = () => {
                     <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
                     </li>
-                    <li className="nav-item">
-                    <Link className="nav-link" to='/'>Link</Link>
-                    </li>
-                    <li className="nav-item dropdown">
-                    <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </Link>
-                    
-                    </li>
                 </ul>
-                <button type="button" className="btn  mx-2 btn-light">Login</button>
-                <button type="button" className="btn  btn-light">Sign Up</button>
+                <Link to='/login'><button type="button" className="btn  mx-2 btn-light">Login</button></Link>
+                <Link to='signup'><button type="button" className="btn  btn-light">Sign Up</button></Link>
                 </div>
             </div>
             </nav>

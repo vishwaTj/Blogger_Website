@@ -1,7 +1,9 @@
 import './App.css';
 import Home from './Pages/Home';
 import Navabar from './components/Navabar';
-import { BrowserRouter as Router, Routes,Route,Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
+import Login from './Pages/login';
+import Signup from './Pages/Signup';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <Navabar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </Router>  

@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+.Home-contianer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.profile{
+  width: 30%;
+}
+
+.profile-card{
+  border-radius: 20px;
+}
+
+.posts{
+  width: 70%;
+}
+
+.posts-card{
+  border-radius: 20px;
+}
