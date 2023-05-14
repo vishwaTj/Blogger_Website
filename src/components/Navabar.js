@@ -17,7 +17,7 @@ const Navabar = () => {
                     </li>
                 </ul>
                 <Link to='/login'><button type="button" className="btn  mx-2 btn-light">Login</button></Link>
-                <Link to='signup'><button type="button" className="btn  btn-light">Sign Up</button></Link>
+                <Link to='/createuser'><button type="button" className="btn  btn-light">Sign Up</button></Link>
                 </div>
             </div>
             </nav>
