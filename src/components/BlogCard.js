@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const BlogCard = ({value}) => {
-    console.log(value);
+    
     return (
      <div className="card posts-card" style={{"width": "80%",marginTop:"10px"}}>
               <div className="card-body">

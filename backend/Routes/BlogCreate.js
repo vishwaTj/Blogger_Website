@@ -41,4 +41,19 @@ router.post("/createblog",[
         }
      })
 
+router.post("/deleteBlog",
+      async(req,res)=>{
+        try{
+          let blog = await Blog.findById(req.body.id);
+          console.log(blog);
+          blog.deleteOne();
+          res.json({success:true})
+        }
+        catch(error){
+            console.log(error);
+           res.json({success:false})
+        }
+     }
+)    
+
 module.exports = router;     

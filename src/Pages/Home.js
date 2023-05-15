@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from "react-router-dom";
 import InputModal from '../components/InputModal';
 import BlogCard from '../components/BlogCard';
 import Avatarblock from '../components/Avatarblock';
@@ -7,7 +6,6 @@ import Avatarblock from '../components/Avatarblock';
 const Home = () => {
   const [BlogData, SetBlogData]= useState([]);
 
-  const email = localStorage.getItem('email');
   const userName = localStorage.getItem('userName');
   const Bio =  localStorage.getItem('Bio');
 
@@ -26,8 +24,8 @@ const Home = () => {
   return (
     <div className='container Home-contianer'>
       <div className='row'>
-        {!userName ? (""): (<div className='profile col'>
-              <div className="container card profile-card" style={{"width": "16rem", borderRadius:"20px"}}>
+        {!userName ? (<div className='col'></div>): (<div className='profile col'>
+              <div className="card profile-card" style={{"width": "16rem", borderRadius:"20px"}}>
                 <div style={{margin:"auto",marginTop:"10px"}}> 
                   <Avatarblock name={userName} />
                 </div>
