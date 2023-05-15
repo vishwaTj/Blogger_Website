@@ -3,6 +3,9 @@ import {Link} from "react-router-dom";
 import InputModal from '../components/InputModal';
 
 const Home = () => {
+  const fetchData = async()=>{
+     const response = await fetch("http://localhost:5000/")
+  }
   return (
     <div className='container Home-contianer'>
       <div className='row'>
