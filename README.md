@@ -1,6 +1,9 @@
 
 
-                **  Working Tutorial of the website  **
+                                          **  Blogger website  **
+                
+                 This is a basic blogger website, where users can login/Signup and post their Blogs
+                  share their exprirence and knowledge also read others Blogs and gain knowledge.
 
 https://github.com/vishwaTj/Blogger_Website/assets/109414918/1507ba20-2fce-4402-a563-0a0929eb96a1
 
@@ -25,3 +28,8 @@ Follow the following steps to run the project locally<br/>
 10) If you are using windows then got localhost://800 and if mac go to localhost://3000 to access the website.<br/>
 <br/>
     !!!!!!!!!!!!            The website is ready to be used           !!!!!!!!!!!!    
+    
+    
+    
+    
+File structure of the project
