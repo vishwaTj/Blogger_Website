@@ -1,4 +1,12 @@
 
+
+                <h2> Working Tutorial of the website </h2> <br/>
+
+https://github.com/vishwaTj/Blogger_Website/assets/109414918/1507ba20-2fce-4402-a563-0a0929eb96a1
+
+   
+  
+  
      **How to start the project locally**
 
 Follow the following steps to run the project locally<br/>
