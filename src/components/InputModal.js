@@ -42,6 +42,7 @@ const InputModal = () => {
           Title:"",
           Content:""
         })
+        window.location.reload(true);
         navigate('/');
       }
   }
@@ -59,7 +60,7 @@ const InputModal = () => {
             type="text"
             className="form-control"
             aria-label="Username"
-            value={user}
+            value={!user ? "":user}
             aria-describedby="basic-addon1"
             name={user}
             disabled

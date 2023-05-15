@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import logo from '../Blogger.png';
 
 const Signup = () => {
    let navigate=useNavigate();
@@ -11,7 +12,7 @@ const Signup = () => {
 
    })
 
-   const Change=(e)=>{
+   const handleChange=(e)=>{
       setCredentials({...credentials,[e.target.name]:e.target.value});
    }
 
@@ -40,39 +41,50 @@ const Signup = () => {
 
   return (
     <>
-    <div className='container'>
-      <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input type="text" className="form-control" name="name" value={credentials.name} onChange={Change} placeholder="Enter name"/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email address</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" name="email" value={credentials.email} onChange={Change} placeholder="Enter email"/>
-            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={Change} placeholder="Password"/>
-          </div>
-          <div className="input-group mt-5 d-flex flex-column">
-          {/* <div className="input-group-prepend">
-            <span className="input-group-text">Tell us about yourself</span>
-          </div> */}
-          <label htmlFor="exampleInputPassword1">Tell us about yourself</label>
-          <textarea
-            className="form-control"
-            aria-label="With textarea"
-            style={{width:"100%"}}
-            value={credentials.Bio}
-            name="Bio"
-            onChange={Change}
-           ></textarea>
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-          <Link to="/login" className='m-3 btn btn-danger'>Already a user</Link>  
-        </form>
-      </div>
+
+      <div className='container'>
+         <div className='login'>
+             <section style={{width:"50%"}}>
+              <div className='loginsection leftSide'>
+                <div style={{width:"100%",backgroundColor:"white",marginBottom:"10px"}}>
+                     <Link to="/"> <img src={logo} alt="company logo" style={{width:"100%",objectFit:"contain", height:"130px"}}/></Link>
+                     </div>
+                     <form onSubmit={handleSubmit} className='submission'>
+                             <div className="mb-3">
+                                 <label htmlhtmlFor="name" className="form-label">Name</label>
+                                 <input type="text" className="form-control" name='name' value={credentials.name} onChange={handleChange} />
+                             </div>
+                             <div className="mb-3">
+                                 <label htmlhtmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                                 <input type="email" className="form-control" name='email' value={credentials.email} id="exampleInputEmail1" aria-describedby="emailHelp" onChange={handleChange} />
+                                 <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                             </div>
+                             <div className="mb-3">
+                                 <label htmlhtmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                 <input type="password" className="form-control" name='password' value={credentials.password} id="exampleInputPassword1" onChange={handleChange} />
+                             </div>
+                             <div className="input-group mt-5 d-flex flex-column">
+                                <label htmlFor="exampleInputPassword1">Tell us about yourself</label>
+                                <textarea
+                                  className="form-control"
+                                  aria-label="With textarea"
+                                  style={{width:"100%"}}
+                                  value={credentials.Bio}
+                                  name="Bio"
+                                  onChange={handleChange}
+                                ></textarea>
+                            </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <Link to="/login" className="m-3 btn btn-danger">Already a user</Link>
+                    </form>
+            </div>
+             </section>
+             <section style={{width:"50%"}}>
+               <div className='loginsection rightSide signupPage'>
+                 </div>
+             </section>
+          </div> 
+        </div>
     </>
   )
 }

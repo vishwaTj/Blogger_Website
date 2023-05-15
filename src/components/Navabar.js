@@ -1,14 +1,17 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 
 const Navabar = () => {
-
+  let navigate = useNavigate();
   const logout=()=>{
     localStorage.removeItem("email");
     localStorage.removeItem('userName');
     localStorage.removeItem('userID');
     window.location.reload(true);
+    navigate('/');
   }
+
+  console.log(localStorage.getItem("email")); 
   return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark  bg-dark">
