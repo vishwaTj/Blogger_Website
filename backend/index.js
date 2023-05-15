@@ -28,6 +28,7 @@ app.use(express.json());
 app.use('/api',require('./Routes/CreateUser'));
 app.use('/api',require('./Routes/BlogCreate'));
 
+
 app.listen(port,()=>{
     console.log(`Example app listening on port ${port}`)
 })

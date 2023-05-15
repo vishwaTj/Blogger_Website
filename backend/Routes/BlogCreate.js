@@ -3,6 +3,21 @@ const router = express.Router();
 const Blog = require("../models/Blog");
 const {body, validationResult} = require('express-validator');
 
+router.get("/fetchBlog",
+    async(Req,res)=>{
+     try{
+        let BlogData = await Blog.find();
+        if(!BlogData){
+            return res.status(400).json({errors: "Error fetching Blog content Mongo DB atlas"})
+        }
+        res.json({success:true,data:BlogData})
+     }catch(error){
+        console.log(error);
+        res.json({success:false});
+     }  
+    }
+)
+
 router.post("/createblog",[
      body('Content').isLength({min:5})],
      async (req,res)=>{
