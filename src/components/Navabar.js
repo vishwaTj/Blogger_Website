@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link,useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Navabar = () => {
-  let navigate = useNavigate();
+
   const logout=()=>{
     localStorage.removeItem("email");
     localStorage.removeItem('userName');
