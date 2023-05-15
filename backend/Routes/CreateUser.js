@@ -18,6 +18,7 @@ router.post('/createuser',[
                     name:req.body.name,
                     password:req.body.password,
                     email:req.body.email,
+                    Bio:req.body.Bio
 
             })
             res.json({success:true});

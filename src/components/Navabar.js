@@ -5,7 +5,9 @@ const Navabar = () => {
   let navigate = useNavigate();
   const logout=()=>{
     localStorage.removeItem("email");
-    navigate('/');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userID');
+    window.location.reload(true);
   }
   return (
     <div>
@@ -22,7 +24,7 @@ const Navabar = () => {
                     </li>
                 </ul>
                 {(!localStorage.getItem("email")) ? (<div> <Link className="btn  mx-2 btn-light" to='/login'>Login</Link>
-                   <Link className="btn  btn-light" to='signup'>Sign Up</Link> </div>) : (<div><Link className="btn  btn-light" to='/' onClick={logout}>Log out</Link> </div>)}
+                   <Link className="btn  btn-light" to='/signup'>Sign Up</Link> </div>) : (<div><form onSubmit={logout} ><button type="submit" className='btn btn-light'>Logout</button> </form></div>)}
                 </div>
             </div>
             </nav>

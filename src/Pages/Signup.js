@@ -7,6 +7,7 @@ const Signup = () => {
              name:"",
              email:"",
              password:"",
+             Bio:""
 
    })
 
@@ -23,7 +24,7 @@ const Signup = () => {
         headers:{
           'Content-Type':'application/json'
         },
-        body:JSON.stringify({name:credentials.name, email:credentials.email, password:credentials.password})
+        body:JSON.stringify({name:credentials.name, email:credentials.email, password:credentials.password, Bio:credentials.Bio})
       });
       const json = await response.json();
       console.log(json);
@@ -53,6 +54,20 @@ const Signup = () => {
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Password</label>
             <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={Change} placeholder="Password"/>
+          </div>
+          <div className="input-group mt-5 d-flex flex-column">
+          {/* <div className="input-group-prepend">
+            <span className="input-group-text">Tell us about yourself</span>
+          </div> */}
+          <label htmlFor="exampleInputPassword1">Tell us about yourself</label>
+          <textarea
+            className="form-control"
+            aria-label="With textarea"
+            style={{width:"100%"}}
+            value={credentials.Bio}
+            name="Bio"
+            onChange={Change}
+           ></textarea>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
           <Link to="/login" className='m-3 btn btn-danger'>Already a user</Link>  

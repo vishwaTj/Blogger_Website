@@ -6,11 +6,9 @@ const BlogCard = ({value}) => {
     return (
      <div className="card posts-card" style={{"width": "80%",marginTop:"10px"}}>
               <div className="card-body">
-              <h6 className="card-subtitle mb-2 text-muted">@{value.name}</h6> 
-                <h5 className="card-title">{value.Title}</h5>
-                <p className="card-text">{value.Content}</p>
-                <Link to="/" className="card-link">Card link</Link>
-                <Link to="/" className="card-link">Another link</Link>
+              <h6 className="card-subtitle mb-2 text-muted">@{value?.name}</h6> 
+                <h5 className="card-title">{value?.Title}</h5>
+                <p className="card-text">{value?.Content}</p>
               </div>
      </div>
   )

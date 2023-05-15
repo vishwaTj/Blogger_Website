@@ -32,6 +32,7 @@ const Login = () => {
         localStorage.setItem('email',credentials.email);
         localStorage.setItem('userName',json.user.name);
         localStorage.setItem('userID',json.user._id);
+        localStorage.setItem('Bio',json.Bio);
         navigate('/');
       }
 }
