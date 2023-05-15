@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const InputModal = () => {
   let user=localStorage.getItem("userName");
   let userID = localStorage.getItem("userID");
-  
+  let navigate = useNavigate();
   
   let [Blog,setBlog]  =useState({
     userID,
@@ -17,12 +18,34 @@ const InputModal = () => {
   }
 
   const handleSubmit= async(e)=>{
-      e.preventDefault();
+       e.preventDefault()
 
-      // const response = await fetch("")
+      const response = await fetch("http://localhost:5000/api/createblog",{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify({
+            name:user,
+            userID,
+            Title:Blog.Title,
+            Content:Blog.Content
+        })
+      })
+      const json = await response.json();
+      console.log(json);
+
+      if(!json.success){
+         alert("Enter valid credentials");
+      }if(json.success){
+        setBlog({
+          Title:"",
+          Content:""
+        })
+        navigate('/');
+      }
   }
 
-  // console.log(user+" "+userID);
   return (
     <div>
      <form onSubmit={handleSubmit}> 
@@ -71,6 +94,12 @@ const InputModal = () => {
             onChange={onChange}
           ></textarea>
         </div>
+        <button type="submit" className="btn btn-primary" data-toggle="collapse"
+                 href="#collapseExample"
+                 aria-expanded="false"
+                 aria-controls="collapseExample">
+                Submit
+        </button>
       </form>
     </div>
   );

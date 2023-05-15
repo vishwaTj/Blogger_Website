@@ -13,7 +13,7 @@ router.post("/createblog",[
 
         try{
            await Blog.create({
-             name:req.body.user,
+             name:req.body.name,
              userID:req.body.userID,
              Title:req.body.Title,
              Content:req.body.Content

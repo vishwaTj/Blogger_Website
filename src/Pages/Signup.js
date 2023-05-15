@@ -30,7 +30,7 @@ const Signup = () => {
 
       if(!json.success){
          alert("Enter valid credentials");
-      }if(json.succes){
+      }if(json.success){
         navigate('/');
       }
       
