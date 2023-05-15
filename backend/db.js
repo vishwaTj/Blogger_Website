@@ -10,9 +10,6 @@ const mongoDB = ()=>{
 
 }
 
-// ,()=>{
-//     console.log("connected");
-// }
 
 module.exports=mongoDB;
 

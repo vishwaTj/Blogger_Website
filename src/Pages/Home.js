@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import InputModal from '../components/InputModal';
+import BlogCard from '../components/BlogCard';
 
 const Home = () => {
+  const [BlogData, SetBlogData]= useState([]);
   const fetchData = async()=>{
-     const response = await fetch("http://localhost:5000/")
+     const response = await fetch("http://localhost:5000/api/fetchBlog",{
+      method:"GET"
+     })
+     const json = await response.json();
+     SetBlogData(json.data);
   }
+  
+  useEffect(()=>{
+    fetchData();
+  },[])
+
   return (
     <div className='container Home-contianer'>
       <div className='row'>
@@ -30,15 +41,13 @@ const Home = () => {
                   <InputModal />
                 </div>
             </div>
-            <div className="card posts-card" style={{"width": "80%"}}>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <Link to="/" className="card-link">Card link</Link>
-                <Link to="/" className="card-link">Another link</Link>
-              </div>
-            </div>
+            {BlogData.map((value, index)=>{
+             return (
+                <div key={index}>
+                   <BlogCard value={value} />
+                </div>)
+           })}
+            
         </div>
         <div className='col'>
 
