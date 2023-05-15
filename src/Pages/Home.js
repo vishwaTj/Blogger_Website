@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import InputModal from '../components/InputModal';
 import BlogCard from '../components/BlogCard';
+import Avatarblock from '../components/Avatarblock';
 
 const Home = () => {
   const [BlogData, SetBlogData]= useState([]);
+
+  const email = localStorage.getItem('email');
+  const userName = localStorage.getItem('userName');
+  const Bio =  localStorage.getItem('Bio');
+
   const fetchData = async()=>{
      const response = await fetch("http://localhost:5000/api/fetchBlog",{
       method:"GET"
@@ -12,7 +18,7 @@ const Home = () => {
      const json = await response.json();
      SetBlogData(json.data);
   }
-  
+
   useEffect(()=>{
     fetchData();
   },[])
@@ -20,16 +26,17 @@ const Home = () => {
   return (
     <div className='container Home-contianer'>
       <div className='row'>
-        <div className='profile col'>
-          <div className="container card profile-card" style={{"width": "18rem"}}>
-            <img className="card-img-top" src="" alt="Card image cap"/>
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <Link to="/" className="btn btn-primary">Go somewhere</Link>
-            </div>
-          </div>
-        </div>
+        {!userName ? (""): (<div className='profile col'>
+              <div className="container card profile-card" style={{"width": "16rem", borderRadius:"20px"}}>
+                <div style={{margin:"auto",marginTop:"10px"}}> 
+                  <Avatarblock name={userName} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title" style={{textAlign:"center"}}>{userName}</h5>
+                  <p className="card-text" >{Bio}</p>
+                </div>
+              </div>
+          </div>)}
         <div className='posts col-8'>
             {(!localStorage.getItem('email')) ? "":(<p>
                   <a className="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
