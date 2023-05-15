@@ -32,4 +32,29 @@ Follow the following steps to run the project locally<br/>
     
     
     
-File structure of the project
+File structure of the project is as follows
+The  front end related files are  mainly 
+                    i) public --> contains the basic react application boiler plate code no changes made
+
+                    ii) src --> constains most of the front end code as follows
+                          a) components --> these are files which were reused throught the website hence defined in this folder
+                                   1) Avatar block --> the avatar icon
+                                   2) Blog Card --> Blogging information as cards
+                                   3) InputModal --> The input form for a blog
+                                   4) Navbar --> basic header for the website
+                          b) Pages --> these files contain different pages which the user switches to for differnt actions
+                                   1) Login  --> this is the login page for website
+                                   2) SignUp --> this is the sign up page for website
+                                   3) Home --> Home page to display all the blogs
+                     iii) App.js --> to render different pages using router
+                     iv) index.js --> To access the root element DOM
+                     
+                     
+The Backend files are stored in the backend folder
+                       i) Routes --> To handle differnet CRUD operations with mongo DB atlas  and also trigger functions
+                             a) BlogCreate --> this handles the fetch, create and delete operations of the Blogs posted
+                             b) CreateUser --> this handles the fetch, create of users to the website
+                       ii) models --> To establish schema for Blogs and users models
+                             a) Blog --> Schema definition fror Blog
+                             b) User --> Schema definition for User
+                      iii) indes.js --> the root folder for the entire NodeJS and Express framework 
