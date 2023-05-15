@@ -1,7 +1,12 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 
 const Navabar = () => {
+  let navigate = useNavigate();
+  const logout=()=>{
+    localStorage.removeItem("email");
+    navigate('/');
+  }
   return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark  bg-dark">
@@ -16,8 +21,8 @@ const Navabar = () => {
                     <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
                     </li>
                 </ul>
-                <Link to='/login'><button type="button" className="btn  mx-2 btn-light">Login</button></Link>
-                <Link to='/createuser'><button type="button" className="btn  btn-light">Sign Up</button></Link>
+                {(!localStorage.getItem("email")) ? (<div> <Link className="btn  mx-2 btn-light" to='/login'>Login</Link>
+                   <Link className="btn  btn-light" to='signup'>Sign Up</Link> </div>) : (<div><Link className="btn  btn-light" to='/' onClick={logout}>Log out</Link> </div>)}
                 </div>
             </div>
             </nav>
