@@ -43,7 +43,7 @@ const Signup = () => {
     <>
 
       <div className='container'>
-         <div className='login'>
+         <div className='Signup'>
              <section style={{width:"50%"}}>
               <div className='loginsection leftSide'>
                 <div style={{width:"100%",backgroundColor:"white",marginBottom:"10px"}}>

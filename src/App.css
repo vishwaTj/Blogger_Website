@@ -57,6 +57,21 @@
   align-items:start;
 }
 
+
+.Signup{
+  width: 900px;
+  border: 2px solid black;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px 2px #e2ca13;
+  -moz-box-shadow: 0 0 5px 2px #e2ca13;
+  box-shadow: 0 0 5px 2px #e2ca13;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items:start;
+}
+
     /* *************** Blogging Cards **************** */
 
 .blog-body{

@@ -20,7 +20,7 @@ const Blog = () => {
         const json = await response.json();
         console.log(json.blogData);
         setData(json.blogData);
-        setDate(json.blogData.Date.slice(0,10));
+        setDate(json.blogData?.Date.slice(0,10));
      }
    
      useEffect(()=>{
