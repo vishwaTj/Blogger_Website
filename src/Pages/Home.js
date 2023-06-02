@@ -46,7 +46,7 @@ const Home = () => {
                   <InputModal />
                 </div>
             </div>
-            {BlogData.map((value, index)=>{
+            {BlogData?.map((value, index)=>{
              return (
                 <div key={index}>
                    <BlogCard value={value} />

@@ -11,7 +11,6 @@ const Navabar = () => {
     navigate('/');
   }
 
-  console.log(localStorage.getItem("email")); 
   return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark  bg-dark">

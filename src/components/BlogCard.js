@@ -20,18 +20,23 @@ const BlogCard = ({value}) => {
             window.location.reload(true);
         }
     };
+    console.log(value);
+
     return (
-     <div className="card posts-card" style={{"width": "80%",marginTop:"10px",cursor:"pointer"}}>
-              <div className="card-body">
+      <Link className='BlogRoute' to='/Blog' state={value}> 
+       <div className="card posts-card topic" style={{"width": "80%",marginTop:"10px",cursor:"pointer"}}>
+              <div className="card-body blog-body">
                 {(user === value.name) ? <div onClick={deleteItem} style={{position:"absolute",top:"10%",left:"92%"}}> 
                   <DeleteIcon />
                 </div> : ""} 
               <h6 className="card-subtitle mb-2 text-muted">@{value?.name}</h6> 
+              {/* <h6></h6> */}
                 <h5 className="card-title">{value?.Title}</h5>
-                <p className="card-text">{value?.Content}</p>
+                <p className="card-text">{value?.Date.slice(0,10)}</p>
               </div>
      </div>
+      </Link>
   )
 }
 
-export default BlogCard
+export default BlogCard;

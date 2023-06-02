@@ -57,6 +57,23 @@
   align-items:start;
 }
 
+    /* *************** Blogging Cards **************** */
+
+.blog-body{
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.BlogRoute{
+  text-decoration: none;
+  /* text-decoration-color: black; */
+  color:none;
+}
+
+.topic{
+  color: black;
+}
 .rightSide{
   background-image: url("https://nationaltoday.com/wp-content/uploads/2021/09/Dear-Diary-Day-1.jpg");
   background-size: cover;
@@ -77,4 +94,19 @@
 
 .submission{
   padding-left: 5px;
+}
+
+
+    /* ********** Blog Page Styling ********** */
+
+.BlogPage{
+  text-align: center;
+}
+
+.blogDate{
+  position: relative;
+  display: inline;
+  top:10px;
+  left:500px;
+  /* color: aqua; */
 }

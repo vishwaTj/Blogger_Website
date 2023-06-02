@@ -4,7 +4,7 @@ const Blog = require("../models/Blog");
 const {body, validationResult} = require('express-validator');
 
 router.get("/fetchBlog",
-    async(Req,res)=>{
+    async(req,res)=>{
      try{
         let BlogData = await Blog.find();
         if(!BlogData){
@@ -17,6 +17,7 @@ router.get("/fetchBlog",
      }  
     }
 )
+
 
 router.post("/createblog",[
      body('Content').isLength({min:5})],
@@ -55,5 +56,23 @@ router.post("/deleteBlog",
         }
      }
 )    
+
+
+router.post("/FetchOne",
+      // console.log("Igot called")
+      async(req,res)=>{
+         console.log("I got called");
+         try{
+         let blog = await Blog.findById(req.body.id);
+         console.log(blog);
+         res.json({success:true,blogData:blog})
+         }
+         catch(error){
+            console.log(error);
+            res.json({success:false})
+         }
+      }
+)
+
 
 module.exports = router;     

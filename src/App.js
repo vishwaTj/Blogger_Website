@@ -4,6 +4,7 @@ import Navabar from './components/Navabar';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import Login from './Pages/login';
 import Signup from './Pages/Signup';
+import Blog from './Pages/Blog';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/Blog" element={<Blog />}/>
         </Routes>
       </div>
     </Router>  
