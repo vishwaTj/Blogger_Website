@@ -53,7 +53,7 @@ The  front end related files are  mainly
                      iv) index.js --> To access the root element DOM
                      
                      
-The Backend files are stored in the backend folder
+The Backend files are stored in the backend folder<br/>
                        i) Routes --> To handle differnet CRUD operations with mongo DB atlas  and also trigger functions
                              a) BlogCreate --> this handles the fetch, create and delete operations of the Blogs posted
                              b) CreateUser --> this handles the fetch, create of users to the website
