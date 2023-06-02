@@ -1,70 +1,60 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+                                          **  Blogger website  **
+                
+                 This is a basic blogger website, where users can login/Signup and post their Blogs
+                  share their exprirence and knowledge also read others Blogs and gain knowledge.
 
-In the project directory, you can run:
+https://github.com/vishwaTj/Blogger_Website/assets/109414918/1507ba20-2fce-4402-a563-0a0929eb96a1
 
-### `npm start`
+   
+  
+  
+     **How to start the project locally**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow the following steps to run the project locally<br/>
+1) Download the file into your system<br/>
+2) open the file in vs code<br/>
+3)open two terminals and split them as shown below in image <br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://github.com/vishwaTj/Blogger_Website/assets/109414918/6c1e6b65-1949-4feb-b55c-89918ceafca8)
+<br/>
+4) In the second terminal do cd /backend  to set it to backend directory<br/>
+5) give command >> npm install in the second terminal to install all the backend dependencies<br/>
+6) give command >>npm install , >>npm run build and >>npm run start set up and start the React part<br/>
+7) give command >> npm start after the install in the second terminal <br/>
+8) The message "connected" in the second terminal determines that it is connected to the backend and Mongo server<br/>
+9) In the first terminal if there is not error then your application is ready to be used<br/>
+10) If you are using windows then got localhost://800 and if mac go to localhost://3000 to access the website.<br/>
+<br/>
+    !!!!!!!!!!!!            The website is ready to be used           !!!!!!!!!!!!    
+    
+    
+    
+    
+File structure of the project is as follows
+The  front end related files are  mainly 
+                    i) public --> contains the basic react application boiler plate code no changes made
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+                    ii) src --> constains most of the front end code as follows
+                          a) components --> these are files which were reused throught the website hence defined in this folder
+                                   1) Avatar block --> the avatar icon
+                                   2) Blog Card --> Blogging information as cards
+                                   3) InputModal --> The input form for a blog
+                                   4) Navbar --> basic header for the website
+                          b) Pages --> these files contain different pages which the user switches to for differnt actions
+                                   1) Login  --> this is the login page for website
+                                   2) SignUp --> this is the sign up page for website
+                                   3) Home --> Home page to display all the blogs
+                     iii) App.js --> to render different pages using router
+                     iv) index.js --> To access the root element DOM
+                     
+                     
+The Backend files are stored in the backend folder
+                       i) Routes --> To handle differnet CRUD operations with mongo DB atlas  and also trigger functions
+                             a) BlogCreate --> this handles the fetch, create and delete operations of the Blogs posted
+                             b) CreateUser --> this handles the fetch, create of users to the website
+                       ii) models --> To establish schema for Blogs and users models
+                             a) Blog --> Schema definition fror Blog
+                             b) User --> Schema definition for User
+                      iii) indes.js --> the root folder for the entire NodeJS and Express framework 
