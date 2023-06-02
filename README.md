@@ -5,7 +5,10 @@
                  This is a basic blogger website, where users can login/Signup and post their Blogs
                   share their exprirence and knowledge also read others Blogs and gain knowledge.
 
-https://github.com/vishwaTj/Blogger_Website/assets/109414918/1507ba20-2fce-4402-a563-0a0929eb96a1
+
+
+
+https://github.com/vishwaTj/Blogger_Website/assets/109414918/1afe771a-2447-4541-9b8d-7e98ee4151bd
 
    
   
