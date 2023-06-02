@@ -5,7 +5,10 @@
                  This is a basic blogger website, where users can login/Signup and post their Blogs
                   share their exprirence and knowledge also read others Blogs and gain knowledge.
 
-https://github.com/vishwaTj/Blogger_Website/assets/109414918/1507ba20-2fce-4402-a563-0a0929eb96a1
+
+
+
+https://github.com/vishwaTj/Blogger_Website/assets/109414918/1afe771a-2447-4541-9b8d-7e98ee4151bd
 
    
   
@@ -50,11 +53,11 @@ The  front end related files are  mainly
                      iv) index.js --> To access the root element DOM
                      
                      
-The Backend files are stored in the backend folder
-                       i) Routes --> To handle differnet CRUD operations with mongo DB atlas  and also trigger functions
-                             a) BlogCreate --> this handles the fetch, create and delete operations of the Blogs posted
-                             b) CreateUser --> this handles the fetch, create of users to the website
-                       ii) models --> To establish schema for Blogs and users models
-                             a) Blog --> Schema definition fror Blog
-                             b) User --> Schema definition for User
-                      iii) indes.js --> the root folder for the entire NodeJS and Express framework 
+The Backend files are stored in the backend folder<br/>
+                       i) Routes --> To handle differnet CRUD operations with mongo DB atlas  and also trigger functions<br/>
+                             a) BlogCreate --> this handles the fetch, create and delete operations of the Blogs posted<br/>
+                             b) CreateUser --> this handles the fetch, create of users to the website<br/>
+                       ii) models --> To establish schema for Blogs and users models<br/>
+                             a) Blog --> Schema definition fror Blog<br/>
+                             b) User --> Schema definition for User<br/>
+                      iii) indes.js --> the root folder for the entire NodeJS and Express framework<br/> 
