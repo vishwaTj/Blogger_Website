@@ -2,6 +2,25 @@ const express = require('express');
 const router = express.Router();
 const Blog = require("../models/Blog");
 const {body, validationResult} = require('express-validator');
+var fs = require('fs');
+var path = require('path');
+const multer = require('multer');
+
+
+const storage = multer.diskStorage({
+   destination: (req, file, cb) => {
+     cb(null, 'uploads');
+   },
+   filename: (req, file, cb) => {
+      const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`;
+      const fileExtension = path.extname(file.originalname);
+      cb(null, `${file.fieldname}-${uniqueSuffix}${fileExtension}`);
+   }
+ });
+
+ 
+var upload = multer({storage});
+
 
 router.get("/fetchBlog",
     async(req,res)=>{
@@ -19,20 +38,37 @@ router.get("/fetchBlog",
 )
 
 
-router.post("/createblog",[
-     body('Content').isLength({min:5})],
+
+
+router.post("/createblog",upload.single('image'),
      async (req,res)=>{
         const errors = validationResult(req);
         if(!errors.isEmpty()){
             return res.status(400).json({ errors: errors.array()})
         }
-
         try{
-           await Blog.create({
+         console.log("We are here");
+         var obj = {
              name:req.body.name,
              userID:req.body.userID,
              Title:req.body.Title,
-             Content:req.body.Content
+             Content:req.body.Content,
+             img:{
+               data: fs.readFileSync(path.join(__dirname , '..' , 'uploads' , req.file.filename)),
+               contentType: 'image/png'
+             }
+         }
+           await Blog.create({...obj})
+           .then((data)=>{
+            console.log("Successfully uploaded");
+           })
+           .catch((err)=>{
+            console.log(`there is an error : ${err}`)
+           })
+           .then((data,err)=>{
+              if(err){
+                console.log(`Error in uploading ${err}`);
+              }
            })
            res.json({success:true})
         }
@@ -59,7 +95,6 @@ router.post("/deleteBlog",
 
 
 router.post("/FetchOne",
-      // console.log("Igot called")
       async(req,res)=>{
          console.log("I got called");
          try{

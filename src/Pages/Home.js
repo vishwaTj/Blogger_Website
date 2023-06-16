@@ -23,6 +23,7 @@ const Home = () => {
 
   return (
     <div className='container Home-contianer'>
+      {/* ************ Bio block on the left ************* */}
       <div className='row'>
         {!userName ? (<div className='col'></div>): (<div className='profile col'>
               <div className="card profile-card" style={{"width": "16rem", borderRadius:"20px"}}>
@@ -35,6 +36,9 @@ const Home = () => {
                 </div>
               </div>
           </div>)}
+
+
+       {/* ************** Middle section input and blog cards **************** */}
         <div className='posts col-8'>
             {(!localStorage.getItem('email')) ? "":(<p>
                   <a className="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -54,6 +58,7 @@ const Home = () => {
            })}
             
         </div>
+
         <div className='col'>
 
         </div>
