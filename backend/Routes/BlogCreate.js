@@ -47,7 +47,6 @@ router.post("/createblog",upload.single('image'),
             return res.status(400).json({ errors: errors.array()})
         }
         try{
-         console.log("We are here");
          var obj = {
              name:req.body.name,
              userID:req.body.userID,
@@ -99,7 +98,6 @@ router.post("/FetchOne",
          console.log("I got called");
          try{
          let blog = await Blog.findById(req.body.id);
-         console.log(blog);
          res.json({success:true,blogData:blog})
          }
          catch(error){

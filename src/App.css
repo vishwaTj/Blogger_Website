@@ -72,6 +72,23 @@
   align-items:start;
 }
 
+
+  /* *********** Home page styling ************ */
+
+.usersAvatar{
+  display: flex;
+  flex-direction: row;
+}
+
+.usersAvatar p{
+  margin-top: 10px;
+  margin-left: 8px;
+}
+
+.usersHeader{
+  margin-left: 40px;
+}
+
     /* *************** Blogging Cards **************** */
 
 .blog-body{
@@ -146,6 +163,15 @@
   top:10px;
   left:500px;
   /* color: aqua; */
+}
+
+.BlogImg{
+   width: 60%;
+   height: 300px;
+   border-radius: 10px;
+   border: 2px solid rgba(255, 255, 255, 0.436);
+   margin-bottom: 10px;
+   box-shadow: 0 0 4px #000000;
 }
 
 

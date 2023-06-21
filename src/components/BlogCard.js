@@ -23,7 +23,6 @@ const BlogCard = ({value}) => {
     };
     
     const { img } = value;
-    console.log(value);
 
     return (
       <Link className='BlogRoute' to='/Blog' state={value}> 

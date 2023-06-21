@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import InputModal from '../components/InputModal';
 import BlogCard from '../components/BlogCard';
 import Avatarblock from '../components/Avatarblock';
+import Avatar2 from '../components/Avatar2';
 
 const Home = () => {
   const [BlogData, SetBlogData]= useState([]);
@@ -16,7 +17,9 @@ const Home = () => {
      const json = await response.json();
      SetBlogData(json.data);
   }
+  console.log(BlogData[0]?.img);
 
+  // const 
   useEffect(()=>{
     fetchData();
   },[])
@@ -60,7 +63,16 @@ const Home = () => {
         </div>
 
         <div className='col'>
-
+          <div className='usersHeader'>
+            <h2>Users</h2>
+          </div>  
+           {BlogData?.map((data)=>{
+               return (
+                 <div className='usersAvatar' key={data?._id}>
+                      <Avatar2 stl={true} name={data?.name} />
+                      <p>{data?.name}</p>
+                </div>)
+           })}
         </div>
       </div>  
     </div>
