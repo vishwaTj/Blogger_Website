@@ -3,6 +3,7 @@ import InputModal from '../components/InputModal';
 import BlogCard from '../components/BlogCard';
 import Avatarblock from '../components/Avatarblock';
 import Avatar2 from '../components/Avatar2';
+import ChatSection from '../components/ChatSection';
 
 const Home = () => {
   const [BlogData, SetBlogData]= useState([]);
@@ -73,6 +74,7 @@ const Home = () => {
                       <p>{data?.name}</p>
                 </div>)
            })}
+            <ChatSection />
         </div>
       </div>  
     </div>
